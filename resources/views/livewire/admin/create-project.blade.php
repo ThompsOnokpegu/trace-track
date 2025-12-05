@@ -50,7 +50,7 @@ $create = function () {
 
 <section class="w-full">
     <flux:main>
-        <div class="max-w-2xl mx-auto" shadow="sm" rounded="lg" padding="6">
+        <div class="max-w-2xl" shadow="sm" rounded="lg" padding="6">
             <div class="mb-6">
                 <flux:heading size="xl" level="1">Create New Project</flux:heading>
                 <flux:subheading class="mt-2">Initiate a new elevator installation tracker.</flux:subheading>
@@ -62,9 +62,9 @@ $create = function () {
                 
                 <!-- Native Select styled to look like Flux -->
                 <div>
-                    <label class="block text-sm font-medium text-zinc-800 mb-1">Select Client</label>
-                    <div class="relative">
-                        <select wire:model="user_id" class="block w-full rounded-lg border-zinc-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-2.5 pl-3 pr-10 text-sm">
+                    <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Select Client</label>
+                    <div class="relative border-1 border-zinc-700 rounded-lg" >
+                        <select wire:model="user_id" class="block w-full rounded-lg border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-2.5 pl-3 pr-10 text-sm">
                             <option value="">-- Choose Customer --</option>
                             @foreach($users as $user)
                                 <option value="{{ $user->id }}">{{ $user->name }} ({{ $user->company_name ?? 'Individual' }})</option>

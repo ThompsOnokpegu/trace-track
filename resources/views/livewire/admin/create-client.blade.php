@@ -44,7 +44,7 @@ $save = function () {
 
 <section class="w-full">
     <flux:main>
-        <div class="mx-auto max-w-2xl w-full">
+        <div class="max-w-2xl w-full">
             <div class="mb-6">
                 <flux:heading size="xl" level="1">Onboard New Client</flux:heading>
                 <flux:subheading class="mt-2">Add customer details before assigning a project.</flux:subheading>
