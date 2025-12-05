@@ -37,8 +37,6 @@ with(fn () => [
             </div>
         </div>
 
-        <flux:separator class="mb-6" />
-
         <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-sm overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-zinc-200 dark:divide-zinc-700">
@@ -73,7 +71,7 @@ with(fn () => [
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 text-right text-sm font-medium">
-                                    <flux:button size="sm" icon="pencil-square" variant="ghost">Edit</flux:button>
+                                    <flux:button size="sm" icon="pencil-square" variant="ghost" href="{{ route('admin.clients.edit', $client->id) }}">Edit</flux:button>
                                 </td>
                             </tr>
                         @empty

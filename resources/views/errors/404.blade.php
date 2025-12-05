@@ -36,7 +36,7 @@
                     <h1 class="text-9xl font-black text-zinc-100 dark:text-zinc-700/50 select-none leading-none">404</h1>
                     
                     <!-- Overlay Message -->
-                    <div class="absolute inset-0 flex items-center justify-center mt-6">
+                    <div class="absolute inset-0 flex items-center justify-center pt-6">
                         <h2 class="text-2xl font-bold text-[#041E42] dark:text-white bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm px-4 py-1 rounded-lg">
                             Project Not Found
                         </h2>
@@ -49,7 +49,7 @@
 
                 <!-- Action Buttons -->
                 <div class="space-y-3">
-                    <a href="https://eliteelevatorsandescalators.com" class="flex items-center justify-center w-full py-3 px-4 bg-[#041E42] hover:bg-[#041E42]/90 text-white font-bold rounded-xl transition shadow-lg shadow-[#041E42]/20 gap-2">
+                    <a href="{{ route('track.search') }}" class="flex items-center justify-center w-full py-3 px-4 bg-[#041E42] hover:bg-[#041E42]/90 text-white font-bold rounded-xl transition shadow-lg shadow-[#041E42]/20 gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                         Return Home
                     </a>

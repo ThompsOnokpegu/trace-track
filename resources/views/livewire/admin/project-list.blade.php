@@ -36,8 +36,6 @@ with(fn () => [
             </div>
         </div>
 
-        <flux:separator class="mb-6" />
-
         <!-- Tailwind Table (Replaces Flux Table) -->
         <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-sm overflow-hidden">
             <div class="overflow-x-auto">

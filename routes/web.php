@@ -43,16 +43,18 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     // Client Management
     Volt::route('/clients', 'admin.client-list')->name('clients.index');
     Volt::route('/clients/create', 'admin.create-client')->name('clients.create');
+    Volt::route('/clients/{user}/edit', 'admin.edit-client')->name('clients.edit');
+
 
     // Project Management (The "Tracker" Control Center)
     Volt::route('/projects/{project}/manage', 'admin.manage-project')->name('projects.manage');
     Volt::route('/projects/{project}/edit', 'admin.edit-project')->name('projects.edit');
 });
 
-// Sprint 2: Client & Public Routes
-
 // 1. Public Tracker (No Login Required)
 Volt::route('/track/{code}', 'client.public-tracker')->name('track.public');
+// Public Search Route (Add this before the specific track route)
+Volt::route('/track', 'client.public-search')->name('track.search');
 
 // 2. Client Dashboard (For clients who do log in)
 Route::middleware(['auth', 'verified'])->prefix('client')->name('client.')->group(function () {
