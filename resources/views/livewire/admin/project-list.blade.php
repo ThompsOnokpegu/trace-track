@@ -71,7 +71,7 @@ with(fn () => [
                                     {{ $project->updated_at->diffForHumans() }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <flux:button size="sm" icon="pencil-square" variant="ghost">Manage</flux:button>
+                                    <flux:button href="{{ route('admin.projects.manage',$project->id) }}" size="sm" icon="pencil-square" variant="ghost">Manage</flux:button>
                                 </td>
                             </tr>
                         @empty

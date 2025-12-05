@@ -38,6 +38,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     
     // Create a new Project
     Volt::route('/projects/create', 'admin.create-project')->name('projects.create');
+    // Project Management (The "Tracker" Control Center)
+    Volt::route('/projects/{project}/manage', 'admin.manage-project')->name('projects.manage');
 
     // Client Management
     Volt::route('/clients', 'admin.client-list')->name('clients.index');
