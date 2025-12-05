@@ -23,6 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'company_name',
+        'address',
     ];
 
     /**
@@ -60,5 +63,12 @@ class User extends Authenticatable
             ->take(2)
             ->map(fn ($word) => Str::substr($word, 0, 1))
             ->implode('');
+    }
+
+    /**
+     * Get the projects for the user.
+     */
+    public function projects() {
+        return $this->hasMany(Project::class);
     }
 }

@@ -30,3 +30,16 @@ Route::middleware(['auth'])->group(function () {
         )
         ->name('two-factor.show');
 });
+// Admin Routes (Protected)
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    
+    // The Main Dashboard: List all projects
+    Volt::route('/projects', 'admin.project-list')->name('projects.index');
+    
+    // Create a new Project
+    Volt::route('/projects/create', 'admin.create-project')->name('projects.create');
+
+    // Client Management
+    Volt::route('/clients', 'admin.client-list')->name('clients.index');
+    Volt::route('/clients/create', 'admin.create-client')->name('clients.create');
+});
