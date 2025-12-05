@@ -71,7 +71,10 @@ with(fn () => [
                                     {{ $project->updated_at->diffForHumans() }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <flux:button size="sm" icon="pencil-square" variant="ghost" href="{{ route('admin.projects.manage', $project) }}">Manage</flux:button>
+                                    <div class="flex justify-end gap-2">
+                                        <flux:button size="sm" icon="pencil-square" variant="ghost" href="{{ route('admin.projects.edit', $project) }}" title="Edit Details"></flux:button>
+                                        <flux:button size="sm" icon="arrow-path" variant="subtle" href="{{ route('admin.projects.manage', $project) }}">Manage</flux:button>
+                                    </div>
                                 </td>
                             </tr>
                         @empty

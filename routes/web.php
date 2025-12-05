@@ -46,6 +46,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     // Project Management (The "Tracker" Control Center)
     Volt::route('/projects/{project}/manage', 'admin.manage-project')->name('projects.manage');
+    Volt::route('/projects/{project}/edit', 'admin.edit-project')->name('projects.edit');
 });
 
 // Sprint 2: Client & Public Routes
