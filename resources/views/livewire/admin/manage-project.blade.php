@@ -3,6 +3,7 @@
 use function Livewire\Volt\{state, layout, rules, mount};
 use App\Models\Project;
 use App\Enums\ProjectStage;
+use Illuminate\Support\Facades\Http;
 
 layout('components.layouts.app');
 
@@ -13,41 +14,65 @@ mount(function (Project $project) {
     $this->newStatus = $project->current_status->value;
 });
 
-// Get all enum cases for the dropdown
 $stages = fn() => ProjectStage::cases();
 
 $updateStatus = function () {
-    // 1. Validation
     $this->validate([
-        'newStatus' => 'required|string', // Enum validation handled by logic
+        'newStatus' => 'required|string', 
         'note' => 'nullable|string|max:500',
     ]);
 
-    // 2. Check if status actually changed
     if ($this->project->current_status->value === $this->newStatus) {
         $this->dispatch('flux-toast', variant: 'warning', message: 'Status is already set to this stage.');
         return;
     }
 
-    // 3. Update Project
+    // 1. Update Project
     $this->project->update(['current_status' => $this->newStatus]);
 
-    // 4. Create History Log
+    // 2. Create History Log
     $stageEnum = ProjectStage::from($this->newStatus);
     
-    $this->project->updates()->create([
+    $update = $this->project->updates()->create([
         'status_key' => $stageEnum,
         'description' => $this->note ?: "Status updated to " . $stageEnum->label(),
         'notify_client' => $this->notify,
     ]);
 
-    // 5. Refresh Data & UI
+    // 3. Fire Webhook to n8n (Only if notify is checked)
+    if ($this->notify && env('N8N_WEBHOOK_URL')) {
+        try {
+            // We use 'dispatch' to the queue if possible, but for simplicity we do it inline with a short timeout
+            // so the admin UI doesn't freeze if n8n is slow.
+            Http::timeout(2)->post(env('N8N_WEBHOOK_URL'), [
+                'type' => 'status_update',
+                'client_name' => $this->project->client->name,
+                'client_phone' => $this->project->client->phone, // Ensure this is +234 format in DB
+                'client_email' => $this->project->client->email,
+                'project_title' => $this->project->title,
+                'new_status' => $stageEnum->label(),
+                'status_color' => $stageEnum->color(),
+                'description' => $update->description,
+                'tracking_url' => route('track.public', $this->project->tracking_code),
+                'timestamp' => now()->toIso8601String(),
+            ]);
+        } catch (\Exception $e) {
+            // Log the error silently so the Admin doesn't see a crash
+            logger()->error("n8n Webhook connection failed: " . $e->getMessage());
+            
+            // Optional: visual feedback
+            $this->dispatch('flux-toast', variant: 'warning', message: 'Status updated, but notification failed to send.');
+            $this->project->refresh();
+            $this->note = ''; 
+            return;
+        }
+    }
+
+    // 4. Refresh Data & UI
     $this->project->refresh();
-    $this->note = ''; // Reset note
+    $this->note = ''; 
     
-    // (Sprint 3: This is where we will trigger the n8n Webhook)
-    
-    $this->dispatch('flux-toast', variant: 'success', message: 'Project status updated successfully!');
+    $this->dispatch('flux-toast', variant: 'success', message: 'Project status updated & Client notified!');
 };
 
 ?>
