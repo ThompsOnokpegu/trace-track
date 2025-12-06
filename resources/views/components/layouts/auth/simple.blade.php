@@ -3,20 +3,26 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-white antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
-        <div class="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-            <div class="flex w-full max-w-sm flex-col gap-2">
-                <a href="{{ route('home') }}" class="flex flex-col items-center gap-2 font-medium" wire:navigate>
-                    <span class="flex h-9 w-9 mb-1 items-center justify-center rounded-md">
-                        <x-app-logo-icon class="size-9 fill-current text-black dark:text-white" />
+    <body class="antialiased">
+        {{-- Branded gradient background and centered container --}}
+        <div class="min-h-screen flex items-center justify-center py-12 px-4" style="background: linear-gradient(180deg, rgba(4,30,66,0.95) 0%, rgba(246,82,117,0.06) 100%);">
+            <div class="w-full max-w-md">
+                {{-- Brand header (logo + name) --}}
+                <a href="{{ route('home') }}" class="flex flex-col items-center gap-2 mb-6" wire:navigate>
+                    <span class="flex h-12 w-12 items-center justify-center rounded-md bg-[#F65275]">
+                        <x-app-logo-icon class="h-8 w-8 fill-current text-white" />
                     </span>
-                    <span class="sr-only">{{ config('app.name', 'Laravel') }}</span>
+                    <span class="text-center text-white font-extrabold text-lg leading-tight">{{ config('app.name', 'Elite Elevators') }}</span>
+                    <p class="text-xs text-zinc-200">Project Tracker</p>
                 </a>
-                <div class="flex flex-col gap-6">
+
+                {{-- Slot: auth card (login/register) --}}
+                <div>
                     {{ $slot }}
                 </div>
             </div>
         </div>
+
         @fluxScripts
     </body>
 </html>
