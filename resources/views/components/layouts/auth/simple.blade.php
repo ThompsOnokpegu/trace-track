@@ -5,7 +5,7 @@
     </head>
     <body class="antialiased">
         {{-- Branded gradient background and centered container --}}
-        <div class="min-h-screen flex items-center justify-center py-12 px-4 bg-zinc-950">
+        <div class="min-h-screen flex items-center justify-center py-12 px-4" style="background: linear-gradient(180deg, rgba(4,30,66,0.95) 0%, rgba(246,82,117,0.06) 100%);">
             <div class="w-full max-w-md">
                 {{-- Brand header (logo + name) --}}
                 <a href="{{ route('home') }}" class="flex flex-col items-center gap-2 mb-6" wire:navigate>
