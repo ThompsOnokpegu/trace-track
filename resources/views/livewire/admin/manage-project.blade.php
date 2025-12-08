@@ -166,8 +166,8 @@ $updateStatus = function () {
                             @foreach($project->updates as $update)
                                 <div class="relative flex gap-6 group">
                                     <!-- Dot -->
-                                    <div class="absolute left-0 mt-1.5 size-10 rounded-full border-4 border-white dark:border-zinc-900 bg-{{ $update->status_key->color() }}-100 dark:bg-{{ $update->status_key->color() }}-900 flex items-center justify-center z-10">
-                                        <div class="size-3 rounded-full bg-{{ $update->status_key->color() }}-500"></div>
+                                    <div class="absolute left-0 mt-1.5 size-7 rounded-full border-4 border-white dark:border-zinc-900 bg-{{ $update->status_key->color() }}-100 dark:bg-{{ $update->status_key->color() }}-900 flex items-center justify-center z-10">
+                                        <div class="size-2 rounded-full bg-{{ $update->status_key->color() }}-500"></div>
                                     </div>
 
                                     <!-- Content -->
