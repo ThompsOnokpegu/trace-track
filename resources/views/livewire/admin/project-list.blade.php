@@ -61,7 +61,7 @@ with(fn () => [
                                     <div class="text-xs text-zinc-500 dark:text-zinc-400">Code: <span class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 rounded">{{ $project->tracking_code }}</span></div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-{{ $project->current_status->color() }}-100 text-{{ $project->current_status->color() }}-800 dark:bg-{{ $project->current_status->color() }}-500/20 dark:text-{{ $project->current_status->color() }}-300">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-{{ $project->current_status->color() }}-100 text-{{ $project->current_status->color() }}-800 dark:bg-{{ $project->current_status->color() }}-500/20 dark:text-{{ $project->current_status->color() }}-400">
                                         {{ $project->current_status->label() }}
                                     </span>
                                 </td>

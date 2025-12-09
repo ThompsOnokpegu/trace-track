@@ -104,7 +104,7 @@
         </main>
 
         <!-- Footer (Fixed at bottom) -->
-        <footer class="relative z-10 shrink-0 border-t border-white/5 bg-[#020F21]/50 backdrop-blur-sm">
+        <footer class="relative z-10 shrink-0 border-t border-white/5 bg-[#020F21]">
             <div class="mx-auto max-w-7xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500">
                 <p>&copy; {{ date('Y') }} Elite Elevators & Escalators.</p>
                 <div class="flex gap-4 mt-2 sm:mt-0">
