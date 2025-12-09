@@ -27,7 +27,8 @@ $track = function () {
             
             <!-- Logo / Branding -->
             <div class="text-center">
-                <h1 class="text-3xl font-bold text-[#041E42] dark:text-white uppercase tracking-tight">Elite Elevators</h1>
+                <!-- add a logo image here -->
+                <img src="{{ asset('img/elite-logo.webp') }}" alt="Elite Elevators Logo" class="mx-auto h-12 w-auto my-4">
                 <p class="text-sm font-medium text-[#F65275] uppercase tracking-wider mt-1">Project Tracker</p>
             </div>
 

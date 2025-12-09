@@ -52,7 +52,7 @@ mount(function ($code) {
             
             <!-- Brand & Title -->
             <div class="text-center mb-10">
-                <h1 class="text-3xl font-bold text-[#041E42] dark:text-white tracking-tight uppercase">Elite Elevators</h1>
+                <img src="{{ asset('img/elite-logo.webp') }}" alt="Elite Elevators Logo" class="mx-auto h-12 w-auto my-4">
                 <p class="text-sm font-medium text-[#F65275] uppercase tracking-wider mt-1">Project Tracker</p>
                 
                 <div class="mt-4 inline-block bg-white dark:bg-zinc-800 px-4 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm">
@@ -93,7 +93,7 @@ mount(function ($code) {
                 
                 <!-- Progress Bar -->
                 <div class="bg-zinc-100 dark:bg-zinc-900/50 px-6 py-6 border-t border-zinc-200 dark:border-zinc-700">
-                    <div class="flex items-center justify-between text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-3">
+                    <div class="flex items-center justify-between text-[10px] sm:text-xs  font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-3">
                         <span>Initiated</span>
                         <span>Production</span>
                         <span>Shipping</span>

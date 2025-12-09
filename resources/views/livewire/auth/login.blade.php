@@ -42,11 +42,17 @@
             <!-- Remember Me -->
             <flux:checkbox name="remember" :label="__('Remember me')" :checked="old('remember')" />
 
-            <div class="flex items-center justify-end">
-                <flux:button variant="primary" type="submit" class="w-full" data-test="login-button">
+            {{-- <div class="flex items-center justify-end">
+                <flux:button variant="primary" type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-[#F65275] hover:bg-[#F65275]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200" data-test="login-button">
                     {{ __('Log in') }}
                 </flux:button>
+            </div> --}}
+            <div class="pt-2">
+                <button type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-[#F65275] hover:bg-[#F65275]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200">
+                    Log in
+                </button>
             </div>
+            
         </form>
 
         @if (Route::has('register'))

@@ -49,7 +49,7 @@
         />
 
         <div class="pt-2">
-            <button type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-[#041E42] hover:bg-[#041E42]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#041E42] transition-all duration-200">
+            <button type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-[#F65275] hover:bg-[#F65275]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200">
                 Create Account
             </button>
         </div>
