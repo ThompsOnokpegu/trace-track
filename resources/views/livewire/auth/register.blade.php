@@ -1,8 +1,8 @@
-<x-layouts.auth.simple title="Register - Elite Elevators">
+<x-layouts.auth.simple title="Register Staff - Elite Elevators">
     
-    <div class="mb-6 text-center">
-        <h2 class="text-2xl font-bold text-[#041E42] dark:text-white">Create Account</h2>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2">Get started with your project tracking</p>
+    <div class="mb-8 text-center">
+        <h2 class="text-xl font-bold text-zinc-900 dark:text-white">Create Account</h2>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Set up a new staff administrator</p>
     </div>
 
     <form method="POST" action="{{ route('register.store') }}" class="space-y-5">
@@ -25,7 +25,7 @@
             label="Email Address" 
             type="email" 
             required 
-            placeholder="you@company.com" 
+            placeholder="staff@eliteelevators.com" 
             icon="envelope"
         />
 
@@ -49,7 +49,7 @@
         />
 
         <div class="pt-2">
-            <button type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-[#F65275] hover:bg-[#F65275]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200">
+            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-[#041E42] hover:bg-[#041E42]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#041E42] transition-all duration-200 uppercase tracking-wide">
                 Create Account
             </button>
         </div>
