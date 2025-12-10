@@ -18,8 +18,9 @@
             type="email" 
             required 
             autofocus 
-            placeholder="admin@eliteelevators.com" 
+            placeholder="username@eliteelevatorsandescalators.com" 
             icon="envelope"
+            class:input="h-12"
         />
 
         <!-- Password -->
@@ -39,6 +40,7 @@
                 autocomplete="current-password" 
                 placeholder="••••••••" 
                 viewable
+                class:input="h-12"
             />
         </div>
 
@@ -46,7 +48,7 @@
         <flux:checkbox name="remember" label="Remember me" />
 
         <!-- Submit Button -->
-        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-[#041E42] hover:bg-[#041E42]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#041E42] transition-all duration-200 uppercase tracking-wide">
+        <button type="submit" class="w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-[#041E42] hover:bg-[#041E42]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#041E42] transition-all duration-200 uppercase tracking-wide">
             Sign In
         </button>
     </form>

@@ -47,13 +47,13 @@ $track = function () {
                                 <flux:icon.magnifying-glass class="h-5 w-5 text-zinc-400" />
                             </div>
                             <input wire:model="code" type="text" id="code" 
-                                class="block w-full pl-10 pr-3 py-3 border border-zinc-300 dark:border-zinc-600 rounded-xl leading-5 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#F65275] focus:border-[#F65275] sm:text-sm uppercase font-mono tracking-widest transition duration-150 ease-in-out" 
+                                class="block w-full pl-10 pr-3 py-4 border border-zinc-300 dark:border-zinc-600 rounded-xl leading-5 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#F65275] focus:border-[#F65275] sm:text-sm uppercase font-mono tracking-widest transition duration-150 ease-in-out" 
                                 placeholder="E.g. X8Y2Z9A1">
                         </div>
                         @error('code') <span class="text-[#F65275] text-xs mt-2 block">{{ $message }}</span> @enderror
                     </div>
 
-                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-[#041E42] hover:bg-[#041E42]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#041E42] transition duration-150 ease-in-out uppercase tracking-wide">
+                    <button type="submit" class="w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-[#041E42] hover:bg-[#041E42]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#041E42] transition duration-150 ease-in-out uppercase tracking-wide">
                         Track Status
                     </button>
                 </form>
