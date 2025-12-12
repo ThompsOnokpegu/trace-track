@@ -53,7 +53,8 @@ $updateStatus = function () {
                 'new_status' => $stageEnum->label(),
                 'status_color' => $stageEnum->color(),
                 'description' => $update->description,
-                'tracking_url' => route('track.public', $this->project->tracking_code),
+                //'tracking_url' => route('track.public', $this->project->tracking_code),
+                'tracking_url' => $this->project->tracking_code,
                 'timestamp' => now()->toIso8601String(),
             ]);
         } catch (\Exception $e) {
